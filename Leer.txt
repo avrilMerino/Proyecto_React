@@ -1,0 +1,20 @@
+He creado el proyecto usando estos comandos recomendados para que el proyecto esté actualizado:
+
+    Frontend:
+    -npm create vite@latest frontend -- --template react
+    -cd frontend
+    -npm install
+    -npm install react-router-dom axios
+
+    Backend:
+    *creo la carpeta backend
+    -cd backend
+    -npm init -y
+    -npm install express cors multer
+    
+ARRANCAR - BACKEND: 
+            cd backend
+            npm start
+        - FRONTED:
+            cd frontend
+            npm run dev
