@@ -1,0 +1,202 @@
+/* ============================= */
+/* CONTENEDOR GENERAL */
+/* ============================= */
+
+.clientes-container {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 24px;
+  padding: 24px;
+  min-height: 100vh;
+  background: #0b0b0f;
+  font-family: "Segoe UI", sans-serif;
+  color: #ffffff;
+}
+
+/* ============================= */
+/* PANEL */
+/* ============================= */
+
+.card {
+  background: #111116;
+  border: 1px solid #ff00aa;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(255, 0, 170, 0.3);
+}
+
+/* TITULOS */
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #ff00aa;
+  text-shadow: 0 0 8px #ff00aa;
+  letter-spacing: 1px;
+}
+
+/* ============================= */
+/* BUSCADOR */
+/* ============================= */
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px 10px;
+  background: #1a1a22;
+  border: 1px solid #ff00aa;
+  color: #ffffff;
+  outline: none;
+}
+
+.search-bar input:focus {
+  box-shadow: 0 0 8px #ff00aa;
+}
+
+.search-bar button {
+  padding: 8px 14px;
+  background: #ff00aa;
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.search-bar button:hover {
+  box-shadow: 0 0 12px #ff00aa;
+  transform: scale(1.05);
+}
+
+/* ============================= */
+/* TABLA */
+/* ============================= */
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.clientes-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #14141b;
+  font-size: 14px;
+}
+
+.clientes-table thead {
+  background: #ff00aa;
+  color: black;
+}
+
+.clientes-table th {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.clientes-table td {
+  padding: 10px;
+  border-bottom: 1px solid #2a2a35;
+}
+
+.clientes-table tbody tr:nth-child(even) {
+  background: #1a1a22;
+}
+
+.clientes-table tbody tr:hover {
+  background: #2a0020;
+  box-shadow: inset 0 0 10px #ff00aa;
+}
+
+/* ============================= */
+/* BOTONES */
+/* ============================= */
+
+.btn {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.btn-edit {
+  background: #ff00aa;
+  color: black;
+  margin-right: 6px;
+}
+
+.btn-edit:hover {
+  box-shadow: 0 0 10px #ff00aa;
+  transform: scale(1.05);
+}
+
+.btn-delete {
+  background: black;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+}
+
+.btn-delete:hover {
+  background: #ff4d4d;
+  color: black;
+  box-shadow: 0 0 10px #ff4d4d;
+}
+
+.btn-primary {
+  background: #ff00aa;
+  color: black;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 10px #ff00aa;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: #1a1a22;
+  color: white;
+  border: 1px solid #555;
+}
+
+.btn-secondary:hover {
+  border-color: #ff00aa;
+  box-shadow: 0 0 8px #ff00aa;
+}
+
+/* ============================= */
+/* FORM */
+/* ============================= */
+
+.form-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.form-grid input {
+  padding: 8px 10px;
+  background: #1a1a22;
+  border: 1px solid #ff00aa;
+  color: white;
+  outline: none;
+}
+
+.form-grid input:focus {
+  box-shadow: 0 0 8px #ff00aa;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}

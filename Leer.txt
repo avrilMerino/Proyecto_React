@@ -30,4 +30,24 @@ PASOS:
         2.5 Pongo en la termminal los siguientes comadnos para cercioararme de que funcionan
 
     3 Empiezo mi frontend, creo src/pages/Clientes.jsx
+        3.1 Qué hace : usando USEEFECT => 
+                clientes: lista que se muestra en la tabla.
+                busqueda: texto del input de búsqueda.
+                cargando: indica si se está esperando respuesta del backend.
+                error: muestra mensajes de error.
+        3.2  Modo edición: const [modoEdicion, setModoEdicion] = useState(false); {
+             Si es false es para crear Cliente, si es true es para editarlo}
+        3.2 
+
     
+
+
+
+
+
+
+
+
+
+
+
