@@ -29,3 +29,5 @@ PASOS:
         2.4 Añado los métodos get, post, put y delete de clientes
         2.5 Pongo en la termminal los siguientes comadnos para cercioararme de que funcionan
 
+    3 Empiezo mi frontend, creo src/pages/Clientes.jsx
+    
