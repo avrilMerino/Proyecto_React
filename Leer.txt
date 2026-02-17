@@ -18,3 +18,14 @@ ARRANCAR - BACKEND:
         - FRONTED:
             cd frontend
             npm run dev
+
+
+PASOS: 
+    1 Crear la base de dados del script bdd.sql
+    2 Creo la conexión backend a MySQL
+        2.1 Creo el archivo backend/db.js
+        2.2 Modifico mi backend/server.js para usar la DB + ENDPOINTS
+        2.3 Lanzo el servidor con $npm start y hago comprobaciones para asegurarme de que la conexión funciona
+        2.4 Añado los métodos get, post, put y delete de clientes
+        2.5 Pongo en la termminal los siguientes comadnos para cercioararme de que funcionan
+
