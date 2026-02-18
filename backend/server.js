@@ -233,3 +233,71 @@ app.delete("/clientes/:id", async (req, res) => {
 
 //LISTENER
 app.listen(PORT, () => console.log(`Backend en http://localhost:${PORT}`));
+
+//--------------------------------
+//             PEDIDOS 
+//--------------------------------
+//POST /pedidos;
+
+app.post("/pedidos", async(req, res) => {
+  const conn = await pool.getConnection();
+  try{
+    const { id_cliente, items } = req.body;
+    if(!id_cliente || !Array.isArray(items) || items.length === 0){
+      return res.status(400).json({ ok: false, error: "Faltan datos del pedido"})
+    }
+    await conn.beginTransaction();
+    
+    // 1) Creo el pedido:
+    const[pedidoResult] = await conn.query(
+      "INSERT INTO pedidos (id_cliente, fecha) VALUES (?, NOW())", [id_cliente]
+    );
+
+    const id_pedido = pedidoResult.insertId;
+
+    // 2) insertar y calcular el total
+    let total = 0;
+
+    for(const it of items){
+      const id_producto = Number(it.id_producto);
+      const cantidad = Number(it.cantidad);
+
+      if(!Number.isInteger(id_producto) || !Number.isInteger(cantidad) || cantidad <= 0){
+        await conn.rollback();
+        return res.status(400).json({ ok: false, error:"Elementos inválidos"});
+      }
+
+      const [prodRowd] = await conn.query(
+        "SELEC precio FROM productos WHERE id_producto = ?", [id_producto] 
+      );
+      if(prodRowd.length === 0) {
+        await conn.rollback();
+        return res.status(404).json({ ok: false, error:"El producto no se ha encontrado"});
+      }
+
+      const precio = Number(prodRows[0].precio);
+      const subtotal = precio * cantidad;
+      total += subtotal;
+
+      await conn.query(
+        `INSERT INTO pedido_detalle (id_pedido, id_producto, candidad, precio unitario)
+        VALUES (?,?,?,?)`, [id_pedido, id_producto, cantidad, precio]
+      );
+    }
+    // 3)actualizo el total
+    await conn.query("UPDATE pedidos SET total = ? WHERE id_pedido = ?",
+      [total, id_pedido]);
+
+    await conn.commit();
+    res.status(201).json({
+      ok: true,
+      pedido: { id_pedido, id_cliente, total }
+    });
+  }catch(e){
+    await conn.rollback();
+    res.status(500).json({ok: false, error: e.message})
+  }finally{
+    conn.release();
+  }
+
+})
