@@ -19,7 +19,7 @@ export default function Pedidos(){
     const [clientes, setClientes]= useState([]);
     const [clientesSel, setClienteSel] = useState(0);
     
-    //progreso envio
+    //progreso envío
     const [pedidoEnCurso, setPedidoEnCurso] = useState(false);
     const [progreso,setProgreso] = useState(0);
 
@@ -55,7 +55,49 @@ export default function Pedidos(){
     }, [carrito]);
 
     //añadir al carrito (igual que en mi anterior proyecto)
-    
+    const anadirCarrito = () => {
+        setError("");
+        setMsg("");
+        if(pedidoEnCurso) return;
+        if(!productoSel){
+            setError("Selecciona un producto del catálogo");
+            return;
+        }
+        
+        const cant = Number(cantidad);
+        if(Number.isInteger(cant) || cant <= 0){
+            setError("Cantidad inválida");
+            return;
+        }
 
+        setCarrito((prev) => {
+            const idx = prev.findIndex((x) => x.id_producto === productoSel.id_producto)
+        
+            if(idx >= 0){
+                const copia= [...prev];
+                copia[idx] = {
+                    ...copia[idx],
+                    cantidad: copia[idx].cantidad + cant
+                };
+                return copia;
+            }
+            return [
+                ...prev, {
+                    id_producto: productoSel.id_producto,
+                    nombre: productoSel.nombre,
+                    precio: productoSel.precio,
+                    cantidad: cant
+
+                }
+            ];
+        });
+    };
+    //eliminar la línea seleccionada 
+    const eliminarLinea = (id_producto) => {
+        if(pedidoEnCurso) return;
+        setCarrito((prev) => prev.filter((x) => x.id_producto !== id_producto));
+    };
+    //finalizar pedido (PROGRESS BAR) con setInterval
+    
 
 }
