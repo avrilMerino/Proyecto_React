@@ -37,10 +37,7 @@ PASOS:
                 error: muestra mensajes de error.
         3.2  Modo edición: const [modoEdicion, setModoEdicion] = useState(false); {
              Si es false es para crear Cliente, si es true es para editarlo}
-    
-    4 Añado el backend de los pedidos para registrar los pedidos y dealle_pedido
-    5 Creo el componente fronted/src/pages/Pedidos.jsx
-    
+        3.2 
 
     
 

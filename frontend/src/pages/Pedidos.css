@@ -1,0 +1,198 @@
+/* ========================= */
+/* CONTENEDOR GENERAL */
+/* ========================= */
+
+.pedidos-container {
+  padding: 24px;
+  min-height: 100vh;
+  background: #070b07;
+  font-family: "Segoe UI", sans-serif;
+  color: #eaffea;
+}
+
+/* ========================= */
+/* TITULO */
+/* ========================= */
+
+.titulo {
+  margin-bottom: 20px;
+  color: #00ff66;
+  text-shadow: 0 0 10px #00ff66;
+  letter-spacing: 1px;
+}
+
+/* ========================= */
+/* FILA SUPERIOR */
+/* ========================= */
+
+.top-row {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.bloque {
+  display: grid;
+  gap: 6px;
+}
+
+select,
+input[type="number"] {
+  padding: 8px 10px;
+  background: #111611;
+  border: 1px solid #00ff66;
+  color: #eaffea;
+  outline: none;
+  min-width: 240px;
+}
+
+select:focus,
+input[type="number"]:focus {
+  box-shadow: 0 0 10px #00ff66;
+}
+
+/* ========================= */
+/* PANEL */
+/* ========================= */
+
+.panel {
+  background: #0d140d;
+  border: 1px solid #00ff66;
+  padding: 18px;
+  box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
+}
+
+/* ========================= */
+/* TABLA */
+/* ========================= */
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0f180f;
+  font-size: 14px;
+}
+
+.tabla thead {
+  background: #00ff66;
+  color: black;
+}
+
+.tabla th {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.tabla td {
+  padding: 10px;
+  border-bottom: 1px solid #1f2a1f;
+}
+
+.tabla tbody tr:nth-child(even) {
+  background: #131f13;
+}
+
+.tabla tbody tr:hover {
+  background: #002b11;
+  box-shadow: inset 0 0 10px #00ff66;
+}
+
+/* ========================= */
+/* TOTAL */
+/* ========================= */
+
+.total {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 15px 0;
+  color: #00ff66;
+  text-shadow: 0 0 8px #00ff66;
+}
+
+/* ========================= */
+/* BOTONES */
+/* ========================= */
+
+.btn {
+  padding: 8px 14px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-add {
+  background: #00ff66;
+  color: black;
+}
+
+.btn-add:hover {
+  box-shadow: 0 0 12px #00ff66;
+  transform: scale(1.05);
+}
+
+.btn-del {
+  background: black;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+}
+
+.btn-del:hover {
+  background: #ff4d4d;
+  color: black;
+  box-shadow: 0 0 10px #ff4d4d;
+}
+
+.btn-finish {
+  margin-top: 10px;
+  background: #00ff66;
+  color: black;
+}
+
+.btn-finish:hover {
+  box-shadow: 0 0 15px #00ff66;
+  transform: scale(1.05);
+}
+
+/* ========================= */
+/* PROGRESS BAR */
+/* ========================= */
+
+.progress {
+  height: 12px;
+  border: 1px solid #00ff66;
+  margin-top: 12px;
+  background: #0f180f;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background: #00ff66;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 12px #00ff66;
+}
+
+/* ========================= */
+/* MENSAJES */
+/* ========================= */
+
+.msg {
+  margin: 10px 0;
+}
+
+.error {
+  color: #ff4d4d;
+}
+
+.ok {
+  color: #00ff66;
+  text-shadow: 0 0 8px #00ff66;
+}
